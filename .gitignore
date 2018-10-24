@@ -7,4 +7,4 @@
 *.hpp
 *.swp
 compiler/bin
-projects/go/protocol/*
+projects/go/protocol/*.pb.go
