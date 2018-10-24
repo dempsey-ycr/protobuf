@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package asset;
+import "asset/asset_manage.proto";
+
+
+// 资产信息
+message AssetInfo {
+    string id = 1;
+    string pid = 2;
+    string name = 3;
+    string description = 4;
+    string ntype = 5;
+    string currency = 6;                            // 币种
+    int64 financeSum = 7;                           // 实际融资额
+    int32 splitNum = 8;                             // 拆分份额
+    string beginTime = 9;
+    string endTime = 10;
+    asset.DataBlockBase base = 11;
+    asset.DocumentStore qualifiedFile = 12;           // 资质文件
+    asset.DocumentStore  whitePaper = 13;             // 白皮书
+    repeated asset.DocumentStore pictures = 14;       // 资质配图
+}
+
+
+
+//-------------------------------------------------[Insert ReadDesc]----------------------------------------------------------------------// 
+
+// 数据入链请求结构
+message RequestAssetPut {
+    string key = 1;
+    string fun = 2;
+    AssetInfo value = 3;
+}
+
+// 资产查询返回结构
+message ResponseAssetGet {
+    int32 code = 1;
+    string message = 2;
+    AssetInfo data = 3 ;
+
+}
+
+// 资产富查询请求结构
+message RequestAssetRichQuery {
+    int32 limit = 1;
+    int32 rtype = 2;    // 资产类型
+    string pid  = 3;    // 资产方ID
+}

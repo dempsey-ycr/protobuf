@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package basic;
+import "asset/asset_manage.proto";
+
+
+// ATO 项目对象
+message ProjectATO {
+    string          id              =1;
+    int32           type            =2;
+    BaseATO         base            =3;
+    Financing       finance         =4;
+    ExitPlan        exitPlan        =5;
+}
+
+
+//-----------------------------------------------------基本信息---------------------------------------------------------//
+message BaseATO {
+    string          ownerId         =1;                             // 项目发起对象id
+    int32           ownerType       =2;                             // 项目发起对象类型
+    string          assetId         =3;                             // 项目绑定的资产id
+    string          name            =4;                             // 项目名称
+    repeated        asset.DocumentStore    picture         =5;        // 项目图片
+    string          shortDesc       =6;                             // 简短描述
+    string          entireDesc      =7;                             // 详细描述
+    asset.DocumentStore                  whitePaper        =8;        // 项目白皮书
+}
+
+//-----------------------------------------------------融资方案---------------------------------------------------------//
+message Financing {
+    int32           tokenType           =1;      // 代币类型
+    string          tokenName           =2;      // 代币名称
+    string          contractAddr        =3;      // 合约地址
+    int32           tokenPrice          =4;      // 代币单价
+    string          tokenUnit           =5;      // 代币单价单位
+    int64           hardCap             =6;      // 发行量
+    int64           fundGoal            =7;      // 融资目标
+    string          fundGoalUnit        =8;      // 融资目标单位
+}
+
+//-----------------------------------------------------退出方案(暂不展开)--------------------------------------------------//
+message ExitPlan {
+
+}

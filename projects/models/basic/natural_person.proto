@@ -1,0 +1,137 @@
+syntax = "proto3";
+
+package basic;
+import "asset/asset_manage.proto";
+
+// 自然人对象
+message NaturalPerson {
+    string          id =1;
+    int32           type =2;
+    BaseNatural     base =3;                           // 基本信息
+    Financial       financial =4;                      // 财务信息
+    Preference      preference =5;                     // 行为偏好
+    SocialRelation  social =6;                         // 社交关系
+    Credit          credit =7;                         // 征信
+}
+//----------------------------------------------------------基本信息-----------------------------------------------------//
+message BaseNatural{
+    Position position =1;                    // 位置信息
+    repeated Occupation occupation =2;       // 职业信息
+    repeated Education education =3;         // 教育信息
+    Personal personalInfo =4;                // 个人信息
+    Contact contactInfo =5;                  // 联络信息
+} 
+ 
+// 位置信息
+message Position {
+    string nationality =1;                  // 国籍
+    string birthplace =2;                   // 出生地
+    string residence =3;                    // 现住地
+    string ancestralHome =4;                // 祖籍
+    string domicile  =5;                    // 户籍所在地
+    string workplace =6;                    // 工作地点        
+    string other     =7;                    // 其他描述
+}
+
+// 职业信息
+message Occupation {
+    string start      =1;                        // 该工作开始时间
+    string end        =2;                        // 该工作结束时间
+    string duty       =3;                        // 该工作所任职务
+    string salary     =4;                        // 薪资
+    string feats      =5;                        // 功绩
+    string whyleave   =6;                        // 离职原因
+    string other      =7;                        //l其他描述
+}
+
+// 教育信息
+message Education {
+    string start        =1;                        // 开始
+    string end          =2;                        // 结束
+    string degree       =3;                        // 学历
+    string awards       =4;                        // 奖项
+    string other        =5;                        // 其他描述
+}
+
+// 个人信息
+message Personal {
+    string name                        =1;          // 名字
+    string gender                      =2;          // 性别
+    string birthday                    =3;          // 出生年月
+    string nickname                    =4;          // 昵称
+    string ID_Number                   =5;          // 身份证号
+    asset.DocumentStore ID_Card_Front    =6;          // 身份证正面
+    asset.DocumentStore ID_Card_Back     =7;          // 身份证反面
+    asset.DocumentStore ID_Card_Hold     =8;          // 手持身份证
+}
+
+// 联络信息
+message Contact {
+    string phone        =1;                     // 手机
+    string mail         =2;                     // 邮箱
+    string wechat       =3;                     // 微信
+    string QQ           =4;                     // qq
+}
+
+
+
+//---------------------------------------------------------财务信息-----------------------------------------------------//
+message Financial {
+    LegalTender     legalTender         =1;              // 法币财务信息
+    CryptoCurrency  cryptoCurrency      =2;              // 代币财务信息
+    Asset           assetManage         =3;              // 固定资产
+}
+
+// 法币财务信息
+message LegalTender {
+    int64 annualIncome                  =1;             // 年收入
+    int64 annualConsume                 =2;             // 年消费
+}
+
+// 代币财务信息
+message CryptoCurrency {
+
+}
+
+// 固定资产(暂不展开)
+message Asset {
+
+}
+
+//--------------------------------------------------------行为偏好-------------------------------------------------------//
+message Preference {
+    repeated Interests Interests                        =1;             // 兴趣爱好
+    repeated ConsumerPreference consumerPreference      =2;             // 消费偏好
+    repeated SpendTime spendTime                        =3;             // 时间投入
+}
+
+
+// 兴趣爱好
+message Interests {
+    string hobby        =1;             // 爱好
+    string score        =2;             // 评分
+}
+
+// 消费偏好(暂不展开)
+message ConsumerPreference {
+
+}
+
+// 时间投入(暂不展开)
+message SpendTime {
+
+}
+
+//-------------------------------------------------------社交关系--------------------------------------------------------//
+message SocialRelation {
+        // ...商务关系链
+        // ...亲属关系链
+        // ...朋友关系链
+}
+
+//------------------------------------------------------征信---------------------------------------------------------//
+message Credit {
+        // ...央行征信报告
+        // ...芝麻信用报告
+        // ...小白信用报告
+}

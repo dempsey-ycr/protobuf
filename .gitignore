@@ -1,0 +1,10 @@
+*.go
+*.c
+*.cc
+*.cpp
+*.h
+*.hh
+*.hpp
+*.swp
+compiler/bin
+projects/go/protocol/*

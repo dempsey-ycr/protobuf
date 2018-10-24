@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package action;
+
+
+// ATO 认购交易对象
+message AtoTransaction {
+    string          id                           =1;            // 交易id
+    string          projectId                    =2;            // 项目id
+    string          purchaserId                  =3;            // 买方id
+    int64           payValueOrder                =4;            // 认购金额 
+    int32           payCryptocurrency            =5;            // 支付币种
+    int64           payValueReceive              =6;            // 实际到账金额
+    float           exRate                       =7;            // 结算汇率
+    int64           AtoAmount                    =8;            // 预计到账的ato令牌数
+    int64           AtoAmountFinal               =9;            // 实际到账的ato令牌数
+    int64           orderTime                    =10;           // 下单时间
+    int64           receiveTime                  =11;           // 转账到账时间
+    int64           tokenTransferTime            =12;           // ato 令牌发放时间
+    string          tokenTransferHash            =13;           // ato令牌转账哈希
+    int32           orderStatus                  =14;           // 订单状态
+}

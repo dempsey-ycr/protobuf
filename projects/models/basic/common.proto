@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package basic;
+
+
+// 基本对象类型
+enum BasicType {
+    NULL            =0;
+    NATURAL_PERSON  =1;
+    LEGAL_PERSON    =2;
+    HOUSE_PROPERty  =3;
+    PROJECT_ATO     =4;
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package basic;
+import "asset/asset_manage.proto";
+
+
+// 法人对象
+message LegalPerson {
+    string             id           =1;            // 唯一ID
+    int32              type         =2;            // 对象类型
+    BaseLegal          base         =3;            // 基本信息
+}
+
+//-----------------------------------------------------基本信息---------------------------------------------------------//
+message BaseLegal {
+    string name                          =1;
+    string phone                         =2;
+    string email                         =3;
+    asset.DocumentStore businessLicense    =4;    // 营业执照
+}
+

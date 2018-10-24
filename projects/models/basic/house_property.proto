@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package basic;
+import "asset/asset_manage.proto";
+
+// 房产信息
+message HouseProperty {
+    string           id                   =1;
+    int32            type                 =2;
+    BaseHouse        base                 =3;
+}
+
+
+//------------------------------------------------------基本信息--------------------------------------------------------//
+message BaseHouse {
+    string ownerId                      =1;     // 所有者id
+    int32  ownerType                    =2;     // 所有者类型 
+    string name                         =3;     // 房产名称
+    string location                     =4;     // 房产位置
+    string entireDesc                   =5;     // 房产描述
+    int32  assetType                    =6;     // 房产类型
+    repeated asset.DocumentStore  picture =7;     // 房产照片
+    asset.DocumentStore  qualification    =8;     // 房产资质文件
+}

@@ -1,0 +1,67 @@
+# 编译生成各个语言版本
+MODE_PATH     = models
+SOURCES_PROTO = $(wildcard ${MODE_PATH}/*.proto)
+
+TRACE = @
+ifeq "${v}" "y"
+  TRACE =
+endif
+
+INFO1 = $(TRACE)printf '\e[32mmake %s done.\e[m\n' $@
+INFO2 = $(TRACE)printf '\e[32mOutput latest protocol files\e[m ==> \e[34mdirectory %s\e[m\n' $@
+
+default:
+	@echo "Usage: make <target language>"
+	@echo "Support target language list:"
+	@echo "    go        Generate Golang source file."
+	@echo "    cpp       Generate C++ header and source."
+	@echo "    java      Generate Java source file."
+	@echo "    objc      Generate Objective C header and source."
+	@echo "    javanano  Generate Java Nano source file."
+	@echo "For example:"
+	@echo "    make go"
+	@echo "    make go [target]"
+	@echo "    make all"
+	@exit 1
+
+all: go cpp objc java javanano
+
+go:	${SOURCES_PROTO}
+	$(TRACE)cd ${MODE_PATH} && make $@
+	$(TRACE)rm -rf $@ && cd ${MODE_PATH} && mv $@ ..
+	echo "jkkk"
+	$(INFO1)
+	$(INFO2)
+
+cpp: 
+	${SOURCES_PROTO}
+	$(TRACE)cd ${MODE_PATH} && make $@
+	$(TRACE)rm -rf $@ && cd ${MODE_PATH} && mv $@ ..
+	$(INFO1)
+	$(INFO2)
+
+objc: 
+	${SOURCES_PROTO}
+	$(TRACE)cd ${MODE_PATH} && make $@
+	$(TRACE)rm -rf $@ && cd ${MODE_PATH} && mv $@ ..
+	$(INFO1)
+	$(INFO2)
+
+java: 
+	${SOURCES_PROTO}
+	$(TRACE)cd ${MODE_PATH} && make $@
+	$(TRACE)rm -rf $@ && cd ${MODE_PATH} && mv $@ ..
+	$(INFO1)
+	$(INFO2)
+
+javanano: 
+	${SOURCES_PROTO}
+	$(TRACE)cd ${MODE_PATH} && make $@
+	$(TRACE)rm -rf $@ && cd ${MODE_PATH} && mv $@ ..
+	$(INFO1)
+	$(INFO2)
+
+clean:
+	$(TRACE)cd ${MODE_PATH} && make $@
+	$(TRACE)rm -rf go cpp java javanano objc
+	$(INFO1)

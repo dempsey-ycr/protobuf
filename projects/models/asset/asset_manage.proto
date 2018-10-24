@@ -1,0 +1,37 @@
+syntax = "proto3" ;
+package asset;
+
+// 资产类型
+enum EnumAssetType {
+	IHT_ASSETMANAGE_ESTATETYPE_ALL    = 0;   	 // 全部
+	IHT_ASSETMANAGE_ESTATETYPE_VILLA  = 1;       // 别墅
+	IHT_ASSETMANAGE_ESTATETYPE_NOW    = 2;       // 现房
+	IHT_ASSETMANAGE_ESTATETYPE_GROUND = 3;       // 土地
+	IHT_ASSETMANAGE_ESTATETYPE_FUTURE = 4;       // 期房
+}
+
+// 资产状态
+enum EnumAssetStatus {
+	IHT_ASSETMANAGE_ASSETSTATUS_ALL     = 0; 	 // 全部
+	IHT_ASSETMANAGE_ASSETSTATUS_BEFORE  = 11;    // 认购未开始
+	IHT_ASSETMANAGE_ASSETSTATUS_ING     = 12;    // 认购中
+	IHT_ASSETMANAGE_ASSETSTATUS_FAILED  = 13;    // 认购失败
+	IHT_ASSETMANAGE_ASSETSTATUS_SUCCEED = 14;    // 认购成功
+}
+
+// DataBlockBase 基础结构
+message DataBlockBase {
+	string docTag     = 1;
+	int32  dbType     = 2;  // 状态类型
+	string dbProfile  = 3;  // 状态描述
+	string createTime = 4;  // 创建时间
+	string updateTime = 5;  // 更新时间
+
+}
+
+// 文件结构信息
+message DocumentStore {
+    int32 dtype = 1;    // 文件类型
+    int32 status = 2;   // 文件状态
+    string hash = 3;    // 文件hash
+}

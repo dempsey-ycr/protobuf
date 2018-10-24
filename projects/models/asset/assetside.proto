@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package asset;
+import "asset/asset_manage.proto";
+
+message AssetSide {
+    string id = 1;
+    string name = 2;
+    string phone = 3;
+    string email = 4;
+    string contract = 5;
+    asset.DataBlockBase base = 6;
+    repeated asset.DocumentStore picture = 7;
+}
+
+
+//-------------------------------------------------[Insert ReadDesc]----------------------------------------------------------------------// 
+
+// 数据入链请求结构
+message RequestAssetsidePut {
+    string key = 1;
+    string fun = 2;
+    AssetSide value = 3;
+}
+
+message ResponseAssetside {
+    int32 code = 1;
+    string message = 2;
+    AssetSide data = 3 ;
+}
+
+// 资产富查询请求结构
+message RequestAssetsideRichQuery {
+    int32 limit = 1;
+    int32 rtype = 2;    // 资产类型
+    string id  = 3;    // 资产方ID
+}
