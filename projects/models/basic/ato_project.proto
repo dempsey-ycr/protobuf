@@ -6,11 +6,12 @@ import "asset/asset_manage.proto";
 
 // ATO 项目对象
 message ProjectATO {
-    string          id              =1;
-    int32           type            =2;
-    BaseATO         base            =3;
-    Financing       finance         =4;
-    ExitPlan        exitPlan        =5;
+    string          owner           =1;
+    string          id              =2;
+    int32           type            =3;
+    BaseATO         base            =4;
+    Financing       finance         =5;
+    ExitPlan        exitPlan        =6;
 }
 
 
@@ -20,10 +21,10 @@ message BaseATO {
     int32           ownerType       =2;                             // 项目发起对象类型
     string          assetId         =3;                             // 项目绑定的资产id
     string          name            =4;                             // 项目名称
-    repeated        asset.DocumentStore    picture         =5;        // 项目图片
+    repeated        asset.DocumentStore    picture         =5;      // 项目图片
     string          shortDesc       =6;                             // 简短描述
     string          entireDesc      =7;                             // 详细描述
-    asset.DocumentStore                  whitePaper        =8;        // 项目白皮书
+    asset.DocumentStore                  whitePaper        =8;      // 项目白皮书
 }
 
 //-----------------------------------------------------融资方案---------------------------------------------------------//

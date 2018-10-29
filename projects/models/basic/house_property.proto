@@ -5,9 +5,10 @@ import "asset/asset_manage.proto";
 
 // 房产信息
 message HouseProperty {
-    string           id                   =1;
-    int32            type                 =2;
-    BaseHouse        base                 =3;
+    string           owner                =1;
+    string           id                   =2;
+    int32            type                 =3;
+    BaseHouse        base                 =4;
 }
 
 

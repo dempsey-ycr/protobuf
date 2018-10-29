@@ -4,10 +4,13 @@ package basic;
 
 
 // 基本对象类型
-enum BasicType {
-    NULL            =0;
-    NATURAL_PERSON  =1;
-    LEGAL_PERSON    =2;
-    HOUSE_PROPERty  =3;
-    PROJECT_ATO     =4;
+enum BasicObjectType {
+    OBJTYPE_NULL            =0;
+    OBJTYPE_NATURALPERSON   =1;  // 自然人对象
+    OBJTYPE_LEGALPERSON     =2;  // 法人对象
+    OBJTYPE_HOUSEPROPERTY   =3;  // 房产对象
+    OBJTYPE_PROJECT_ATO     =4;  // 项目对象之ATO
 }
+
+
+

@@ -6,9 +6,10 @@ import "asset/asset_manage.proto";
 
 // 法人对象
 message LegalPerson {
-    string             id           =1;            // 唯一ID
-    int32              type         =2;            // 对象类型
-    BaseLegal          base         =3;            // 基本信息
+    string             owner        =1;
+    string             id           =2;            // 唯一ID
+    int32              type         =3;            // 对象类型
+    BaseLegal          base         =4;            // 基本信息
 }
 
 //-----------------------------------------------------基本信息---------------------------------------------------------//

@@ -5,13 +5,14 @@ import "asset/asset_manage.proto";
 
 // 自然人对象
 message NaturalPerson {
-    string          id =1;
-    int32           type =2;
-    BaseNatural     base =3;                           // 基本信息
-    Financial       financial =4;                      // 财务信息
-    Preference      preference =5;                     // 行为偏好
-    SocialRelation  social =6;                         // 社交关系
-    Credit          credit =7;                         // 征信
+    string          owner      =1;                    // 对象所有者       
+    string          id         =2;                    // 对象id
+    int32           type       =3;                    // 对象类型
+    BaseNatural     base       =4;                    // 基本信息
+    Financial       financial  =5;                    // 财务信息
+    Preference      preference =6;                    // 行为偏好
+    SocialRelation  social     =7;                    // 社交关系
+    Credit          credit     =8;                    // 征信
 }
 //----------------------------------------------------------基本信息-----------------------------------------------------//
 message BaseNatural{
@@ -55,11 +56,11 @@ message Education {
 
 // 个人信息
 message Personal {
-    string name                        =1;          // 名字
-    string gender                      =2;          // 性别
-    string birthday                    =3;          // 出生年月
-    string nickname                    =4;          // 昵称
-    string ID_Number                   =5;          // 身份证号
+    string name                          =1;          // 名字
+    string gender                        =2;          // 性别
+    string birthday                      =3;          // 出生年月
+    string nickname                      =4;          // 昵称
+    string ID_Number                     =5;          // 身份证号
     asset.DocumentStore ID_Card_Front    =6;          // 身份证正面
     asset.DocumentStore ID_Card_Back     =7;          // 身份证反面
     asset.DocumentStore ID_Card_Hold     =8;          // 手持身份证
