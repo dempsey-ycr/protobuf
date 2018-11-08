@@ -10,7 +10,39 @@ enum BasicObjectType {
     OBJTYPE_LEGALPERSON     =2;  // 法人对象
     OBJTYPE_HOUSEPROPERTY   =3;  // 房产对象
     OBJTYPE_PROJECT_ATO     =4;  // 项目对象之ATO
+    OBJTYPE_MAX             =5;  // 最大保留值
 }
 
+// 请求结构
+message RequestByCond {
+    int32  type      =1;        // 对象类型
+    string id        =2;        // 对象id
+    string owner     =3;        // 对象所属者
+}
+
+message Response {
+    int32           code            =1;
+    string          message         =2;
+    bytes           payload         =3;
+    FabricPrivate   fabricPrivate   =4; 
+}
+
+
+// fabric private response
+message FabricPrivate {
+    int32  chaincodeStatus                  =1;
+    string transactionID                    =2;
+    int32  txValidationCode                 =3;
+    repeated Endorsement endorsement        =4;
+}
+
+// fabric endorsement response
+message Endorsement {
+    int32  status           =1;     // 背书状态
+    string endorseAddr      =2;     // 背书地址
+    bytes  signature        =3;     // 背书签名
+    int32  version          =4;
+    int64  timestamp        =5;    // Time the proposal was created by the submitter
+}
 
 
