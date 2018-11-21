@@ -25,13 +25,18 @@ message BaseNatural{
  
 // 位置信息
 message Position {
-    string nationality =1;                  // 国籍
-    string birthplace =2;                   // 出生地
-    string residence =3;                    // 现住地
-    string ancestralHome =4;                // 祖籍
-    string domicile  =5;                    // 户籍所在地
-    string workplace =6;                    // 工作地点        
-    string other     =7;                    // 其他描述
+    string nationality   =1;                  // 国籍
+    string birthplace    =2;                  // 出生地
+    string residence     =3;                  // 现住地
+    string ancestralHome =4;                  // 祖籍
+    string domicile      =5;                  // 户籍所在地
+    string postcode      =6;                  // 邮编
+    string workplace     =7;                  // 工作地点        
+    string countryCode   =8;                  // 国家编码
+    string county        =9;                  // 国家
+    string state         =10;                 // 省
+    string city          =11;                 // 城市
+    string other         =12;                 // 其他描述
 }
 
 // 职业信息
@@ -42,7 +47,7 @@ message Occupation {
     string salary     =4;                        // 薪资
     string feats      =5;                        // 功绩
     string whyleave   =6;                        // 离职原因
-    string other      =7;                        //l其他描述
+    string other      =7;                        // 其他描述
 }
 
 // 教育信息
@@ -56,14 +61,20 @@ message Education {
 
 // 个人信息
 message Personal {
-    string name                          =1;          // 名字
-    string gender                        =2;          // 性别
-    string birthday                      =3;          // 出生年月
-    string nickname                      =4;          // 昵称
-    string ID_Number                     =5;          // 身份证号
-    asset.DocumentStore ID_Card_Front    =6;          // 身份证正面
-    asset.DocumentStore ID_Card_Back     =7;          // 身份证反面
-    asset.DocumentStore ID_Card_Hold     =8;          // 手持身份证
+    string name                                     =1;          // 名字
+    string gender                                   =2;          // 性别
+    string birthday                                 =3;          // 出生年月
+    string nickname                                 =4;          // 昵称
+    string ID_Number                                =5;          // 身份证号
+    asset.DocumentStore ID_Card_Front               =6;          // 身份证正面
+    asset.DocumentStore ID_Card_Back                =7;          // 身份证反面
+    asset.DocumentStore ID_Card_Hold                =8;          // 手持身份证
+    asset.DocumentStore passFront                   =9;          // 护照封面
+    asset.DocumentStore passContent                 =10;         // 护照内容页
+    asset.DocumentStore passHold                    =11;         // 护照手持
+    asset.DocumentStore drivingLicenseFront         =12;         // 驾照封面
+    asset.DocumentStore drivingLicenseContent       =13;         // 驾照内容页
+    asset.DocumentStore drivingLicenseHold          =14;         // 驾照手持
 }
 
 // 联络信息
