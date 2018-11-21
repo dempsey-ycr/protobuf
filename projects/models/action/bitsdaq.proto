@@ -4,16 +4,19 @@ package action;
 
 // Bitsdaq交易对象
 message Bitsdaq {
-    string matchedID                =1;             // 匹配的交易ID
-    string bitsdaqID                =2;             // bitsdaq的orderID
-    string bittrexID                =3;             // bittrex的orderID
-    string exchange                 =4;             // 交易币对
-    int32  orderType                =5;             // 订单类型
-    int64  limit                    =6;             // 挂单价
-    int64  vol                      =7;             // 成交量
-    int64  revol                    =8;             // 剩余量
-    float  commission               =9;             // 手续费
-    double price                    =10;            // 支付费用
-    float  priceUnit                =11;            // 成交单价
-    string time                     =12;            // 时间
+    string          owner                    =1;
+    int32           type                     =2;
+    string          id                       =3;
+    string          matchedID                =4;             // 匹配的交易ID
+    string          bitsdaqID                =5;             // bitsdaq的orderID
+    string          bittrexID                =6;             // bittrex的orderID
+    string          exchange                 =7;             // 交易币对
+    int32           orderType                =8;             // 订单类型
+    int64           limit                    =9;             // 挂单价
+    int64           vol                      =10;             // 成交量
+    int64           revol                    =11;             // 剩余量
+    float           commission               =12;             // 手续费
+    double          price                    =13;            // 支付费用
+    float           priceUnit                =14;            // 成交单价
+    string          time                     =15;            // 时间
 }

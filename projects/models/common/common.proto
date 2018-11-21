@@ -1,16 +1,19 @@
 syntax = "proto3";
 
-package basic;
+package common;
 
 
 // 基本对象类型
-enum BasicObjectType {
+enum ObjectType {
     OBJTYPE_NULL            =0;
     OBJTYPE_NATURALPERSON   =1;  // 自然人对象
     OBJTYPE_LEGALPERSON     =2;  // 法人对象
     OBJTYPE_HOUSEPROPERTY   =3;  // 房产对象
     OBJTYPE_PROJECT_ATO     =4;  // 项目对象之ATO
-    OBJTYPE_MAX             =5;  // 最大保留值
+    OBJTYPE_BOUNDARY        =5;  // 基本对象(上)与行为对象(下)分界线
+    OBJTYPE_ACTION_ATOTRANS =6;  // ato交易对象
+    OBJTYPE_ACTION_BITSDAQ  =7;  // bitsdaq交易对象
+    OBJTYPE_MAX             =8;  // 最大保留值
 }
 
 // 请求结构
@@ -44,5 +47,3 @@ message Endorsement {
     int32  version          =4;
     int64  timestamp        =5;    // Time the proposal was created by the submitter
 }
-
-
