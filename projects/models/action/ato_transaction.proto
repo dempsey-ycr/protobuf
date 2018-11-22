@@ -11,11 +11,11 @@ message AtoTransaction {
     string          projectId                    =4;            // 项目id
     string          purchaserId                  =5;            // 买方id
     int64           payValueOrder                =6;            // 认购金额 
-    int32           payCryptocurrency            =7;            // 支付币种
+    string          payCryptocurrency            =7;            // 支付币种
     int64           payValueReceive              =8;            // 实际到账金额
     float           exRate                       =9;            // 结算汇率
-    int64           AtoAmount                    =10;            // 预计到账的ato令牌数
-    int64           AtoAmountFinal               =11;            // 实际到账的ato令牌数
+    int64           atoAmount                    =10;           // 预计到账的ato令牌数
+    int64           atoAmountFinal               =11;           // 实际到账的ato令牌数
     int64           orderTime                    =12;           // 下单时间
     int64           receiveTime                  =13;           // 转账到账时间
     int64           tokenTransferTime            =14;           // ato 令牌发放时间

@@ -13,10 +13,10 @@ message Bitsdaq {
     string          exchange                 =7;             // 交易币对
     int32           orderType                =8;             // 订单类型
     int64           limit                    =9;             // 挂单价
-    int64           vol                      =10;             // 成交量
-    int64           revol                    =11;             // 剩余量
-    float           commission               =12;             // 手续费
+    int64           vol                      =10;            // 成交量
+    int64           revol                    =11;            // 剩余量
+    float           commission               =12;            // 手续费
     double          price                    =13;            // 支付费用
     float           priceUnit                =14;            // 成交单价
-    string          time                     =15;            // 时间
+    int64           time                     =15;            // 时间
 }
